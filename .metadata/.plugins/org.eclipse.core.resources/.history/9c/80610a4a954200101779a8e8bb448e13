@@ -1,0 +1,31 @@
+package mis;
+
+import static io.restassured.RestAssured.*;
+
+import org.hamcrest.Matchers;
+
+import com.ninza.hrm.contants.endpoints.IEndpoints;
+
+import io.restassured.http.ContentType;
+
+
+public class jsonscmeaalidation {
+	
+	
+	@test
+	public void jsoncema() {
+		
+		
+	}
+	
+	Response resp = given()
+	resp.contentType(ContentType.JSON)
+	.body(pobj)
+.when()
+	.post(IEndpoints.ADD_Project);
+resp.then()
+	.assertThat().statusCode(201)
+	.assertThat().time(Matchers.lessThan(3000L))
+	
+	.log().all();
+}

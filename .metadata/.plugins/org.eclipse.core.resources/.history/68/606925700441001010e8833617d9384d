@@ -1,0 +1,23 @@
+package mockingSolution;
+
+import com.jayway.jsonpath.JsonPath;
+
+import spark.Spark;
+
+public class CreditCardMock {
+	
+	/*dependency added: Gson  sparkjava*/
+
+	public static void main(String[] args) {
+		
+		Spark.port(8889);
+		Spark.post("/credit-card", (req,res)->{
+			
+			JsonPath.read(req.body().toString(),"$.creditcard");
+			return "";
+		});
+			
+	
+	}
+
+}

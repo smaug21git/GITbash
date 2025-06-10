@@ -1,0 +1,69 @@
+package gorest;
+
+import org.hamcrest.Matchers;
+import org.testng.annotations.Test;
+
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
+
+import static io.restassured.RestAssured.*;
+
+public class CreateUserTest {
+	
+	/*@Test
+	public void createUser () {
+		
+		String reqBody="{\"id\":7932203,\"name\":\"SANU02\",\"email\":\"sanu55@gmail.com\",\"gender\":\"male\",\"status\":\"active\"}";
+		
+		Response resp = given()
+			.auth().oauth2("b7174865bf17fe10f85d77af81c54d41755c4c2f519786b571e4d2c7b8540333")
+			.contentType(ContentType.JSON)
+			.body(reqBody)
+			.log().all()
+		.when()
+			.post("https://gorest.co.in/public/v2/users");
+		resp.then()
+			.assertThat().header("Connection", "keep-alive") // header verification
+			.assertThat().statusLine("HTTP/1.1 201 Created") // statusline verification
+			.assertThat().body("name", Matchers.equalTo("SANU02")) // res body verification
+			.log().all();
+			
+			System.out.println(resp.jsonPath().get("name"));
+	} */
+	
+	/*@Test
+	public void getUser() {
+		
+		given()
+			.get("https://gorest.co.in/public/v2/users/7932203")
+		.then()
+			.log().all();
+	}*/
+	
+	
+	@Test
+	public void createUser () {
+		
+		String reqBody="{\"id\":7932203,\"name\":\"SANU02\",\"email\":\"san@gmail.com\",\"gender\":\"male\",\"status\":\"active\"}";
+		
+		Response resp = given()
+			.auth().oauth2("b7174865bf17fe10f85d77af81c54d41755c4c2f519786b571e4d2c7b8540333")
+			.contentType(ContentType.JSON)
+			.body(reqBody)
+			.log().all()
+		.when()
+			.put("https://gorest.co.in/public/v2/users/7439572");
+		resp.then()
+		.log().all();
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+}

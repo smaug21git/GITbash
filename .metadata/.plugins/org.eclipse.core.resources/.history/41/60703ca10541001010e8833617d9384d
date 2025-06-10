@@ -1,0 +1,33 @@
+package mockingSolution;
+
+import com.jayway.jsonpath.JsonPath;
+
+import spark.Spark;
+
+public class CreditCardMock {
+	
+	/*dependency added: Gson , sparkjava*/
+
+	public static void main(String[] args) {
+		
+		Spark.port(8889);
+		Spark.post("/credit-card", (req,res)->{
+			
+			String response="";
+			String card = JsonPath.read(req.body().toString(),"$.creditcard");
+				
+				if(card.equals("1234567891234")) {
+					response="{\"status\":\"Payment success\"}";
+					res.status(200);
+				} else {
+					response="{\"status\":\"Payment failed\"}";
+					res.status(404);
+				}
+			
+			return response;
+		});
+			
+	
+	}
+
+}

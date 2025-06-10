@@ -1,0 +1,40 @@
+package mis;
+
+import org.testng.annotations.Test;
+
+import io.restassured.http.ContentType;
+
+import static io.restassured.RestAssured.*;
+
+import java.io.File;
+
+public class RestFulBooker2 {
+
+	
+	@Test
+	public void getID() {
+		
+		String token="7d8e9609796d49d";
+		
+		File f= new File("./booker.json");
+		
+		given()
+		
+			.contentType(ContentType.JSON)
+			.body(f)
+		.when()
+			.patch("https://restful-booker.herokuapp.com/booking/1133")
+			
+		.then()
+			.log().all();
+		
+	}
+	
+
+		
+		
+		
+		
+		
+	}
+

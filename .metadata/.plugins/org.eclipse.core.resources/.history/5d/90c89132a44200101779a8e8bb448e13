@@ -1,0 +1,30 @@
+package mis;
+
+import static io.restassured.RestAssured.given;
+
+import org.testng.annotations.Test;
+
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
+
+public class wiemock {
+	
+	@Test
+	public void jsoncema8() {
+		
+		
+		String query="{\"debitCardNum\":\"1234567887654321\",\r\n"
+				+ "    \"cvv\":\"543\",\r\n"
+				+ "    \"expDate\": \"28/30\"}";
+		
+	 Response resp = given()
+			.contentType(ContentType.JSON)
+			.body(query)
+		.when()
+			.post("http://localhost:9999");
+		resp.then()
+			.log().all();
+
+		}
+
+}

@@ -1,0 +1,13 @@
+package hms;
+
+import org.testng.annotations.Test;
+
+public class UserRegisterTest {
+	
+	
+	@Test
+	public void 
+	
+	
+
+}

@@ -1,0 +1,12 @@
+package mockingSolution;
+
+public class CreditCardMock {
+	
+	//dependency added: Gson and sparkjava
+
+	public static void main(String[] args) {
+		spark
+	
+	}
+
+}

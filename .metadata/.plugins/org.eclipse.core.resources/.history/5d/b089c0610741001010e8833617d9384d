@@ -1,0 +1,29 @@
+package mockingSolution;
+
+import org.json.simple.JSONObject;
+import org.testng.annotations.Test;
+
+import io.restassured.http.ContentType;
+
+import static io.restassured.RestAssured.*;
+
+public class CreditCardPamentTest {
+	
+	@Test
+	public void payment() {
+		
+		JSONObject jObj= new JSONObject();
+		jObj.put("creditcard", "1234567891234");
+		jObj.put("cvv", "123");
+		jObj.put("cardName", "Deepak");
+		
+		given()
+			.contentType(ContentType.JSON)
+			.body(jObj)
+		.when()
+			.post("http://localhost:8889/credit-card")
+		.then()
+			.log().all();
+	}
+
+}

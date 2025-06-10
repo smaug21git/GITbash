@@ -1,0 +1,33 @@
+package com.ninza.hrm.api.BaseAPI;
+
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
+
+import com.ninza.hrm.api.GenericUtility.DataBaseUtility;
+import com.ninza.hrm.api.GenericUtility.javaUtility;
+import com.ninza.hrm.api.GenericUtility.propertyFileUtility;
+
+public class BaseAPIClass {
+	
+	public propertyFileUtility pLib= new propertyFileUtility();
+	public javaUtility jLib= new javaUtility();
+	public DataBaseUtility dLib= new DataBaseUtility();
+	
+	
+	@BeforeSuite
+	public void confifBS() throws Throwable {
+		dLib.getDbConnectionWithCredentials();
+		
+		System.out.println("========connect to database=========");
+	}
+	
+	@AfterSuite 
+	public void configAS() throws Throwable {
+		dLib.closeDbConnection();
+		
+		System.out.println("========disconnect to database=========");
+		
+	}
+	
+
+}

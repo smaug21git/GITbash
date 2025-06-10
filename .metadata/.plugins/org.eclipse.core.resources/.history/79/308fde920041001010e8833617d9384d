@@ -1,0 +1,22 @@
+package mockingSolution;
+
+class PANcard{
+	public static String isvalid(String pancard) {
+		if(pancard.matches("[A-Z]{5}[0-9]{4}[A-Z]{1}")==true) {
+			return "is valid PAN card";
+		}
+		else {
+			return "is not a valid PAN card";
+		}
+	}
+}
+
+public class MockingTest {
+	
+	public static void main(String[] args) {
+		
+		System.out.println( PANcard.isvalid("ABChHE2917F"));
+		
+	}
+
+}

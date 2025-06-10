@@ -1,0 +1,5 @@
+package com.ninza.hrm.api.projectTest;
+
+public class CreateProject {
+
+}

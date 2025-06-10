@@ -1,0 +1,40 @@
+package com.ninza.hrm.api.projectTest;
+
+import static io.restassured.RestAssured.*;
+
+import java.util.Random;
+
+import org.hamcrest.Matchers;
+import org.testng.annotations.Test;
+
+import com.ninza.hrm.api.POJO.ProjectPOJO;
+
+import io.restassured.http.ContentType;
+
+
+public class CreateProject {
+	
+	@Test
+	public void project() {
+		
+		Random r= new Random();
+		int rNo=r.nextInt(5000);
+		
+		//creating an java object of pojo class
+		ProjectPOJO pobj= new ProjectPOJO("orangee", "Created",0, "sanu_"+rNo+"");
+		
+		
+		given()
+			.contentType(ContentType.JSON)
+			.body(pobj)
+		.when()
+			.post("http://49.249.28.218:8091/addProject")
+		.then()
+			.assertThat().statusCode(201)
+			.assertThat().time(Matchers.lessThan(3000L))
+			.assertThat().contentType(ContentType.JSON)
+			.log().all();
+	}
+	}
+
+

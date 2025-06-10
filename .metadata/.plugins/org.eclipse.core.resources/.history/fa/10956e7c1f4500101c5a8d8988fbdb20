@@ -1,0 +1,45 @@
+package mis;
+
+import org.testng.annotations.Test;
+
+import io.restassured.http.ContentType;
+
+import static io.restassured.RestAssured.*;
+
+public class RestFulBooker {
+
+	
+//	@Test
+//	public void getID() {
+//		
+//		given()
+//			.get("https://restful-booker.herokuapp.com/booking")
+//		.then()
+//			.log().all();
+//		
+//	}
+	
+	@Test
+	public void updateId() {
+		
+		
+		String body="{\r\n"
+				+ "    \"firstname\" : \"SANU\",\r\n"
+				+ "    \"lastname\" : \"AHMED\"\r\n"
+				+ "}";
+		
+		given()
+			.contentType(ContentType.JSON)
+			.body(body)
+		.when()
+			.patch("https://restful-booker.herokuapp.com/booking/:id")
+		.then()
+			.log().all();
+		
+		
+		
+		
+		
+		
+	}
+}

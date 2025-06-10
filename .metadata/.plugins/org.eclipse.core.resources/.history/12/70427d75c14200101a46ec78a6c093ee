@@ -1,0 +1,27 @@
+package gorest;
+
+import org.testng.annotations.Test;
+
+import io.restassured.http.ContentType;
+
+import static io.restassured.RestAssured.*;
+
+public class CreateUserTest {
+	
+	@Test
+	public void createUser () {
+		
+		String reqBody="{\"id\":7932203,\"name\":\"SANU\",\"email\":\"sanu555555@gmail.com\",\"gender\":\"male\",\"status\":\"active\"}";
+		
+		given()
+			.auth().oauth2("b7174865bf17fe10f85d77af81c54d41755c4c2f519786b571e4d2c7b8540333")
+			.contentType(ContentType.JSON)
+			.body(reqBody)
+			.log().all()
+		.when()
+			.post("https://gorest.co.in/public/v2/users")
+		.then()
+			.log().all();
+	} 
+
+}

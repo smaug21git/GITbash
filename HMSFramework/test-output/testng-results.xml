@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-05-24T13:11:50 IST" name="Default suite" finished-at="2025-05-24T13:12:02 IST" duration-ms="12752">
+    <groups>
+      <group name="system">
+        <method signature="createPatientLoginPutAppDoctorAppHisCancelAppTest.createPatientAndLogin()[pri:0, instance:hc.hms.Integration.createPatientLoginPutAppDoctorAppHisCancelAppTest@183ec003]" name="createPatientAndLogin" class="hc.hms.Integration.createPatientLoginPutAppDoctorAppHisCancelAppTest"/>
+      </group> <!-- system -->
+    </groups>
+    <test started-at="2025-05-24T13:11:50 IST" name="Default test" finished-at="2025-05-24T13:12:02 IST" duration-ms="12752">
+      <class name="hc.hms.Integration.createPatientLoginPutAppDoctorAppHisCancelAppTest">
+        <test-method is-config="true" signature="dataBaseConnection()[pri:0, instance:hc.hms.Integration.createPatientLoginPutAppDoctorAppHisCancelAppTest@183ec003]" started-at="2025-05-24T13:11:49 IST" name="dataBaseConnection" finished-at="2025-05-24T13:11:50 IST" duration-ms="219" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- dataBaseConnection -->
+        <test-method is-config="true" signature="toGetIntoUrl()[pri:0, instance:hc.hms.Integration.createPatientLoginPutAppDoctorAppHisCancelAppTest@183ec003]" started-at="2025-05-24T13:11:50 IST" name="toGetIntoUrl" finished-at="2025-05-24T13:11:52 IST" duration-ms="2043" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- toGetIntoUrl -->
+        <test-method signature="createPatientAndLogin()[pri:0, instance:hc.hms.Integration.createPatientLoginPutAppDoctorAppHisCancelAppTest@183ec003]" started-at="2025-05-24T13:11:52 IST" name="createPatientAndLogin" finished-at="2025-05-24T13:12:02 IST" duration-ms="10666" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createPatientAndLogin -->
+        <test-method is-config="true" signature="toCloseBrowser()[pri:0, instance:hc.hms.Integration.createPatientLoginPutAppDoctorAppHisCancelAppTest@183ec003]" started-at="2025-05-24T13:12:02 IST" name="toCloseBrowser" finished-at="2025-05-24T13:12:02 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- toCloseBrowser -->
+        <test-method is-config="true" signature="ExtentReportFlush()[pri:0, instance:hc.hms.Integration.createPatientLoginPutAppDoctorAppHisCancelAppTest@183ec003]" started-at="2025-05-24T13:12:02 IST" name="ExtentReportFlush" finished-at="2025-05-24T13:12:02 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ExtentReportFlush -->
+      </class> <!-- hc.hms.Integration.createPatientLoginPutAppDoctorAppHisCancelAppTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

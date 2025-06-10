@@ -1,0 +1,5 @@
+package com.ninza.hrm.api.GenericUtility;
+
+public class RestAssuredUtility {
+
+}

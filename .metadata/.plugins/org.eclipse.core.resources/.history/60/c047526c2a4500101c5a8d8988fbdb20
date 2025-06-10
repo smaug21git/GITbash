@@ -1,0 +1,46 @@
+package mis;
+
+import org.testng.annotations.Test;
+
+import io.restassured.http.ContentType;
+
+import static io.restassured.RestAssured.*;
+
+import java.io.File;
+
+public class RestFulBooker2 {
+
+	
+	@Test
+	public void getID() {
+		
+		//String token="7d8e9609796d49d";
+		
+		String reqBody="{\r\n"
+				+ "    \"firstname\" : \"SANU\",\r\n"
+				+ "    \"lastname\" : \"AHMED\"\r\n"
+				+ "}";
+		
+		given()
+			.cookie("token", "536f382e6c41bee")
+			
+			
+		
+			.contentType(ContentType.JSON)
+			.body(reqBody)
+		.when()
+			.patch("https://restful-booker.herokuapp.com/booking/998")
+			
+		.then()
+			.log().all();
+		
+	}
+	
+
+		
+		
+		
+		
+		
+	}
+
